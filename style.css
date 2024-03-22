@@ -1,0 +1,115 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-color: #212529;
+    --font-color: #f1f5f9;
+    --border-color: #666;
+    --primary-color: #4dff;
+    --success-color: #4dff91;
+    --error-color: #ff0043;
+}
+
+body{
+    background: var(--bg-color);
+    color: var(--font-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+    display: block;
+    margin: 0 auto;
+    max-width: 35rem;
+    padding:0 1.5rem 2.5rem ;
+    position: relative;
+}
+
+header{
+    padding: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#switchTheme{
+    padding: 0.5rem 1rem;
+    background: var(--bg-color);
+    color: var(--font-color);
+    border-radius: 5px;
+    border: 1px solid var(--font-color);
+    cursor: pointer;
+    transition: 0.15s;
+    font-weight: 600;
+}
+
+#switchTheme:hover{
+    background-color: var(--font-color);
+    color: var(--bg-color);
+    border-color: var(--border-color);
+}
+
+input{
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    border-radius: 15px;
+    text-align: end;
+    font-size: 1.75rem;
+}
+
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 1rem;
+    margin: 2rem auto;
+}
+
+#keys button{
+    background-color: var(--primary-color);
+    font-weight: 600;
+    font-size: 1.25rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#keys button:hover{
+    filter: brightness(0.8);
+}
+
+.base{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#result{
+    border-width: 2px 2px 2px 0;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+#copyToClipboard{
+    background: transparent;
+    border: solid var(--border-color);
+    border-width: 2px;
+    border-radius: 0.5rem 0 0 0.5rem;
+    color: var(--font-color);
+    cursor: pointer;
+    height: 4.25rem;
+    width: 6rem;
+}
+
+.success{
+    border-color: var(--success-color) !important;
+    color: var(--success-color) !important;
+}
+
+.error{
+    background: var(--error-color);
+}
