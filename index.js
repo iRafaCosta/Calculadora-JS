@@ -26,30 +26,30 @@ input.addEventListener('keydown',function(ev){
     }if(ev.key === "Backspace"){
         input.value = input.value.slice(0,-1)
     }if(ev.key === "Enter"){
-        calculate
+        calculate()
     }
 })
 
 document.getElementById('equal').addEventListener('click',calculate)
 
 function calculate(){
-    resultInput.innerText = "ERROR"
-    resultInput.classList.add('error')
+    resultInput.value = "ERROR"
+    resultInput.classList.add("error") 
     const result = eval(input.value)
     resultInput.value = result
-    resultInput.classList.remove('error')
+    resultInput.classList.remove("error")
 }
 
 document.getElementById('copyToClipboard').addEventListener('click', function(ev){
-    const btn = ev.currentTarget()
+    const button = ev.currentTarget
     
-    if(btn === "Copy"){
-        btn.innerText = "Copied!"
-        btn.classList.add('success')
+    if(button.innerText === "Copy"){
+        button.innerText = "Copied!"
+        button.classList.add('success')
         navigator.clipboard.writeText(resultInput.value)
     }else{
-        btn.innerText = "Copy"
-        btn.classList.remove('success')
+        button.innerText = "Copy"
+        button.classList.remove('success')
     }
 })
 
